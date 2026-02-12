@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Présentation · La Passerelle ESN</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page présentation */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .histoire-section {
+            padding: 5rem 0;
+        }
+        
+        .histoire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .histoire-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .histoire-image img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .histoire-content h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .histoire-content p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .chiffres-section {
+            background: var(--light);
+            padding: 4rem 0;
+        }
+        
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .chiffre-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .chiffre-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .chiffre-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .chiffre-label {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .equipe-section {
+            padding: 5rem 0;
+        }
+        
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .membre-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .membre-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .membre-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .membre-info {
+            padding: 1.5rem;
+        }
+        
+        .membre-nom {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .membre-poste {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .membre-bio {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .valeurs-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            padding: 5rem 0;
+            color: white;
+        }
+        
+        .valeurs-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        
+        .valeurs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .valeur-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+        
+        .valeur-card:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: scale(1.05);
+            border-color: var(--secondary);
+        }
+        
+        .valeur-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .valeur-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .valeur-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .histoire-grid,
+            .chiffres-grid,
+            .equipe-grid,
+            .valeurs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .histoire-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .histoire-image {
+                order: -1;
+            }
+            
+            .chiffres-grid,
+            .equipe-grid,
+            .valeurs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chiffre-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">La Passerelle</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html" class="active">Présentation</a></li>
+                    <li><a href="expertise-reseaux.html">Réseaux</a></li>
+                    <li><a href="expertise-donnees.html">Analyse données</a></li>
+                    <li><a href="expertise-programmation.html">Programmation</a></li>
+                    <li><a href="expertise-bdd.html">Bases de données</a></li>
+                    <li><a href="expertise-securite.html">Sécurité</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="recrutement.html">Recrutement</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Qui sommes-nous ?</h1>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">
+                    Découvrez l'histoire, l'équipe et les valeurs du Groupe La Passerelle.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Histoire -->
+        <section class="histoire-section">
+            <div class="container">
+                <div class="histoire-grid">
+                    <div class="histoire-content">
+                        <h2>Notre histoire</h2>
+                        <p>Fondé en 2018 par trois ingénieurs passionnés, le Groupe La Passerelle est né d'une conviction : la technologie doit être accessible, performante et sécurisée.</p>
+                        <p>Partis d'un petit incubateur parisien, nous avons grandi rapidement grâce à notre exigence technique et notre proximité avec nos clients. Aujourd'hui, nous sommes une ESN de référence spécialisée dans 6 domaines d'expertise complémentaires.</p>
+                        <p>Notre nom "La Passerelle" symbolise notre mission : créer des ponts entre les innovations technologiques et les besoins concrets des entreprises.</p>
+                    </div>
+                    <div class="histoire-image">
+                        <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Histoire de l'entreprise">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Chiffres clés -->
+        <section class="chiffres-section">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 2rem;">La Passerelle en chiffres</h2>
+                <div class="chiffres-grid">
+                    <div class="chiffre-card">
+                        <div class="chiffre-number">6</div>
+                        <div class="chiffre-label">Domaines d'expertise</div>
+                    </div>
+                    <div class="chiffre-card">
+                        <div class="chiffre-number">50+</div>
+                        <div class="chiffre-label">Collaborateurs</div>
+                    </div>
+                    <div class="chiffre-card">
+                        <div class="chiffre-number">120+</div>
+                        <div class="chiffre-label">Clients satisfaits</div>
+                    </div>
+                    <div class="chiffre-card">
+                        <div class="chiffre-number">4</div>
+                        <div class="chiffre-label">Agences en France</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Équipe -->
+        <section class="equipe-section">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem; font-size: 2rem;">Notre équipe dirigeante</h2>
+                <p style="text-align: center; color: var(--gray); max-width: 700px; margin: 0 auto 3rem auto;">
+                    Des profils complémentaires unis par la même passion de l'excellence technique.
+                </p>
+                
+                <div class="equipe-grid">
+                    <div class="membre-card">
+                        <img src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Thomas Mercier" class="membre-image">
+                        <div class="membre-info">
+                            <h3 class="membre-nom">Thomas Mercier</h3>
+                            <div class="membre-poste">Président & Co-fondateur</div>
+                            <p class="membre-bio">Expert en cybersécurité, 15 ans d'expérience. Ancien CISO du Groupe BPCE.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="membre-card">
+                        <img src="https://images.pexels.com/photos/3771118/pexels-photo-3771118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Claire Dubois" class="membre-image">
+                        <div class="membre-info">
+                            <h3 class="membre-nom">Claire Dubois</h3>
+                            <div class="membre-poste">Directrice Technique</div>
+                            <p class="membre-bio">Docteure en intelligence artificielle, ancienne lead data scientist chez Orange.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="membre-card">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Mehdi Kaci" class="membre-image">
+                        <div class="membre-info">
+                            <h3 class="membre-nom">Mehdi Kaci</h3>
+                            <div class="membre-poste">Directeur des Opérations</div>
+                            <p class="membre-bio">Expert en architecture logicielle et cloud, 12 ans chez Microsoft.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Valeurs -->
+        <section class="valeurs-section">
+            <div class="container">
+                <h2>Nos valeurs</h2>
+                <div class="valeurs-grid">
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Nous explorons constamment les technologies émergentes pour offrir des solutions à la pointe.</p>
+                    </div>
+                    
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Confiance</h3>
+                        <p>La transparence et l'honnêteté sont au cœur de nos relations clients et collaborateurs.</p>
+                    </div>
+                    
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Humain</h3>
+                        <p>Notre première richesse, ce sont nos talents. Nous plaçons l'humain au centre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>&copy; 2026 Groupe La Passerelle — ESN.</p>
+                <p>Tous droits réservés.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
