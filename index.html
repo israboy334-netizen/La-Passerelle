@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>La Passerelle · ESN</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (gratuit) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAVIGATION (menu burger inclus) -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">La Passerelle</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="expertise-reseaux.html">Réseaux</a></li>
+                    <li><a href="expertise-donnees.html">Analyse données</a></li>
+                    <li><a href="expertise-programmation.html">Programmation</a></li>
+                    <li><a href="expertise-bdd.html">Bases de données</a></li>
+                    <li><a href="expertise-securite.html">Sécurité</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="recrutement.html">Recrutement</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION avec image de fond (depuis internet) -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">Groupe La Passerelle</h1>
+                <p class="hero-subtitle">Expertise technique · Innovation · Confiance</p>
+                <p class="hero-text">ESN de référence, nous accompagnons les entreprises dans leur transformation numérique.</p>
+                <div class="hero-buttons">
+                    <a href="presentation.html" class="btn btn-primary">Découvrir</a>
+                    <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION POINTS FORTS / VALEURS -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Nos engagements</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h3>Expertise plurielle</h3>
+                        <p>6 domaines techniques couverts par des consultants passionnés.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Sécurité avant tout</h3>
+                        <p>Audits, cybersécurité, protection des données sensibles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Data driven</h3>
+                        <p>Big data, BI, analyse statistique pour éclairer vos décisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARROUSEL D'IMAGES / ACTUALITÉS (Fonctionnalité JS n°2) -->
+        <section class="carousel-section">
+            <div class="container">
+                <h2 class="section-title">Ils nous font confiance</h2>
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Équipe en réunion">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Développement collaboratif">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.pexels.com/photos/3861961/pexels-photo-3861961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Analyse de données">
+                    </div>
+                    <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active-dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRÉSENTATION RAPIDE DES EXPERTISES (liens) -->
+        <section class="expertises">
+            <div class="container">
+                <h2 class="section-title">Nos expertises</h2>
+                <div class="expertise-grid">
+                    <a href="expertise-reseaux.html" class="expertise-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Réseaux</span>
+                    </a>
+                    <a href="expertise-donnees.html" class="expertise-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analyse données</span>
+                    </a>
+                    <a href="expertise-programmation.html" class="expertise-item">
+                        <i class="fas fa-code"></i>
+                        <span>Programmation</span>
+                    </a>
+                    <a href="expertise-bdd.html" class="expertise-item">
+                        <i class="fas fa-database"></i>
+                        <span>Bases de données</span>
+                    </a>
+                    <a href="expertise-securite.html" class="expertise-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Sécurité</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>&copy; 2026 Groupe La Passerelle — ESN.</p>
+                <p>Tous droits réservés.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
