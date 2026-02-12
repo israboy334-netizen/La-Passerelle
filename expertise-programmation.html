@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation · La Passerelle ESN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3a5f 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .expertise-detail { padding: 5rem 0; }
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .expertise-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        .expertise-content h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+        }
+        .expertise-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--gray);
+        }
+        .expertise-list i { color: var(--secondary); font-size: 1.2rem; }
+        .services-section {
+            background: var(--light);
+            padding: 4rem 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .service-card h3 { color: var(--primary); margin-bottom: 1rem; }
+        
+        @media screen and (max-width: 992px) {
+            .expertise-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media screen and (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">La Passerelle</a></div>
+            <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="expertise-reseaux.html">Réseaux</a></li>
+                    <li><a href="expertise-donnees.html">Analyse données</a></li>
+                    <li><a href="expertise-programmation.html" class="active">Programmation</a></li>
+                    <li><a href="expertise-bdd.html">Bases de données</a></li>
+                    <li><a href="expertise-securite.html">Sécurité</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="recrutement.html">Recrutement</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Programmation</h1>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">Développement web, mobile, logiciel.</p>
+            </div>
+        </section>
+
+        <section class="expertise-detail">
+            <div class="container">
+                <div class="expertise-grid">
+                    <div class="expertise-image">
+                        <img src="https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Développement">
+                    </div>
+                    <div class="expertise-content">
+                        <h2>Software craftsmanship</h2>
+                        <p style="margin-bottom: 2rem; color: var(--gray);">Des applications sur mesure, robustes et maintenables. Nous maîtrisons les technologies modernes.</p>
+                        <ul class="expertise-list">
+                            <li><i class="fas fa-check-circle"></i> Développement web (React, Angular, Vue, Node.js)</li>
+                            <li><i class="fas fa-check-circle"></i> Applications mobiles (iOS, Android, Flutter, React Native)</li>
+                            <li><i class="fas fa-check-circle"></i> Logiciels d'entreprise (C#, Java, Python)</li>
+                            <li><i class="fas fa-check-circle"></i> APIs et microservices</li>
+                            <li><i class="fas fa-check-circle"></i> Cloud (AWS, Azure, GCP)</li>
+                            <li><i class="fas fa-check-circle"></i> DevOps et CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem; font-size: 2rem;">Nos expertises</h2>
+                <p style="text-align: center; color: var(--gray); max-width: 700px; margin: 0 auto 3rem auto;">Des technologies variées pour répondre à tous vos besoins.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Web</h3>
+                        <p style="color: var(--gray);">Sites, applications, e-commerce, CMS.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile</h3>
+                        <p style="color: var(--gray);">Applications natives et hybrides.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud & DevOps</h3>
+                        <p style="color: var(--gray);">Infrastructure as code, conteneurs, orchestration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info"><p>&copy; 2026 Groupe La Passerelle — ESN.</p><p>Tous droits réservés.</p></div>
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
